@@ -1,10 +1,10 @@
 #include <unistd.h>
 
-void set_env_func(const char* file, const char** argv)
+void set_env_func(const char* file, char *const argv[])
 {
     if (0)
     {
-        exec(file, argv);
+        execv(file, argv);
     }
 }
 

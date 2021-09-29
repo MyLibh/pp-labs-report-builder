@@ -12,9 +12,9 @@
 #endif /* !MAX_THREADS_NUM */
 
 extern void func(int* array, const int size, const int threads_num);
-extern void set_env_func(const char* file, const char** argv);
+extern void set_env_func(const char* file, const char* argv[]);
 
-int main(int argc, const char** argv)
+int main(int argc, const char* argv[])
 {
     set_env_func(argv[0], argv);
 
