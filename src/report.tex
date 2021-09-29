@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{../data/images/}}
+\usepackage{listings}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{csvsimple}
+\usepackage{adjustbox}
+\usepackage{verbatim}
+
+\title{Параллельное программирование\\Лабораторная работа №*}
+\author{ИИКС ИБ\\Б19-5*5\\Фамилия Имя}
+\date
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+
+\newpage
+\section{Рабочая среда}
+\verbatiminput{../data/system_info.txt}
+
+\newpage
+\section{Анализ}
+\input{../data/analysis.tex}
+
+\newpage
+\section{Графики}
+\begin{minipage}{\linewidth}
+    \includegraphics[width=\linewidth]{time.png}
+    \captionof{figure}{Время}
+\end{minipage}
+\begin{minipage}{0.48\linewidth}
+    \includegraphics[width=\linewidth]{accel.png}
+    \captionof{figure}{Ускорение}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+    \includegraphics[width=\linewidth]{eff.png}
+    \captionof{figure}{Эффективность}
+\end{minipage}
+
+\newpage
+\section{Заключение}
+\input{../data/conclusion}
+
+\newpage
+\section{Приложение 1}
+\lstinputlisting[language=C]{../func.c}
+
+\newpage
+\section{Приложение 1а}
+\lstinputlisting[language=C]{lab.c}
+
+\newpage
+\section{Приложение 1б}
+\lstinputlisting[language=Python]{script.py}
+
+\newpage
+\section{Приложение 1в}
+\lstinputlisting[language=bash]{../build.sh}
+
+\newpage
+\section{Приложение 2}
+\captionof{table}{Время} 
+\begin{adjustbox}{width=\linewidth}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \bfseries Threads & \bfseries Avg&1&2&3&4&5&6&7&8&9&10
+        \csvreader[head to column names]{../data/data.csv}{}{\\\hline\csvlinetotablerow}
+        \\\hline
+    \end{tabular}
+\end{adjustbox}
+
+\end{document}
